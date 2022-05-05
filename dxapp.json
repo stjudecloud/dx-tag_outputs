@@ -1,0 +1,46 @@
+{
+    "openSource": false,
+    "access": {
+        "project": "CONTRIBUTE"
+    },
+    "developers": ["user-clmcleod"],
+    "authorizedUsers": [
+        "user-clmcleod",
+        "user-snewman",
+        "user-appdpdnanexus_stjude.org",
+        "user-appdddnanexus_stjude.org",
+        "org-stjude_cloud_app_runners",
+        "org-stjude_cloud"
+    ],
+    "regionalOptions": {
+        "aws:us-east-1": {
+            "systemRequirements": {"*": {"instanceType": "mem2_ssd1_x2"}}
+        },
+        "azure:westus": {
+            "systemRequirements": {"*": {"instanceType": "azure:mem2_ssd1_x2"}}
+        }
+    },
+    "billTo": "org-stjude_cloud",
+    "runSpec": {
+        "distribution": "Ubuntu",
+        "interpreter": "bash",
+        "release": "14.04",
+        "file": "src/code.sh"
+    },
+    "name": "stjude_tag_outputs",
+    "title": "Tag Outputs (St. Jude)",
+    "summary": "Tag the specified files as results able to be downloaded by SJCloud.",
+    "details": {
+        "contactEmail": "clay.mcleod@stjude.org"
+    },
+    "dxapi": "1.0.0",
+    "version": "1.0.0",
+    "inputSpec": [
+        {
+            "class": "array:file",
+            "label": "Array of files to tag",
+            "name": "files_to_tag"
+        }
+    ],
+    "outputSpec": []
+}
